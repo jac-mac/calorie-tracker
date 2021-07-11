@@ -4,3 +4,9 @@
   height: 200vh;
   width: 100%; 
 }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

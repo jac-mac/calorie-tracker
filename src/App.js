@@ -1,6 +1,7 @@
 import './App.css';
-import FoodsList from './components/FoodsList'
-import AppBar from './components/AppBar'
+import FoodsList from './components/Food/FoodsList'
+import AppBar from './components/AppBar/AppBar'
+import Graph from './components/Graph/Graph'
 
 function App() {
   const foods = [{
@@ -31,7 +32,10 @@ function App() {
   return (
     <div className="App">
         <AppBar food={foods}/>
-        <FoodsList food={foods} />
+        <div className='content'>
+          <FoodsList food={foods} />
+          <Graph data={foods}/>
+        </div>
     </div>
   );
 }
