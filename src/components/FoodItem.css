@@ -1,0 +1,70 @@
+.food-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: rgba(64, 64, 63, 1);
+  color: #ec7070;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.food-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+.food-item__base {
+  display: inline-block;
+  margin-right: 2%;
+  width: 12rem;
+  height: 8rem;
+  border-style: solid;
+  border-radius: 12px;
+  text-align: center;
+  justify-content: center;
+}
+
+.food-item__base h2 {
+  font-size: 1.5rem;
+}
+
+.food-item__base span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.macro-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 85%;
+  height: 8rem;
+  border-style: solid;
+  border-radius: 12px;
+}
+
+.protein-count {
+  /* border-style: solid; */
+  text-align: center;
+  line-height: 4pt;
+  padding: 0 3px 8px 3px;
+}
+
+.macro-container h3 {
+  text-decoration: underline;
+}
+
+.carbs-count {
+  /* border-style: solid; */
+  text-align: center;
+  line-height: 4pt;
+  padding: 0 3px 8px 3px;
+}
+
+.fat-count {
+  /* border-style: solid; */
+  text-align: center;
+  line-height: 4pt;
+  padding: 0 3px 8px 3px;
+}
