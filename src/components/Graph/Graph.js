@@ -23,7 +23,16 @@ export default function Graph(props) {
       };
     return (
         <div>
-            <Doughnut data={data} options={{legend: { display: true, position: 'right',}, }}/>
+            <Doughnut data={data} options={
+              {tooltips: {
+                callbacks: {
+                  label: function(tooltipItem, chartData) {
+                    return chartData.labels[tooltipItem.index] + ': ' + chartData.datasets[0].data[tooltipItem.index] + '%'
+                  }
+                }
+              }}
+            }
+            />
         </div>
     )
 }

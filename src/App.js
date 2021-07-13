@@ -2,6 +2,7 @@ import './App.css';
 import FoodsList from './components/Food/FoodsList'
 import AppBar from './components/AppBar/AppBar'
 import Graph from './components/Graph/Graph'
+import NewFoodForm from './components/Food/NewFoodForm'
 
 function App() {
   const foods = [{
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
         <AppBar food={foods}/>
+        <NewFoodForm />
         <div className='content'>
           <FoodsList food={foods} />
           <Graph data={foods}/>
