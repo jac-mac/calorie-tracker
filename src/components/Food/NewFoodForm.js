@@ -5,13 +5,27 @@ import { useState } from 'react'
 export default function NewFoodForm(props) {
 
     const [foodName, setFoodName] = useState('')
-    const [foodCalories, setFoodCalories] = useState(0)
-    const [foodProtein, setFoodProtein] = useState(0)
-    const [foodCarbs, setFoodCarbs] = useState(0)
-    const [foodFat, setFoodFat] = useState(0)
+    const [foodCalories, setFoodCalories] = useState('')
+    const [foodProtein, setFoodProtein] = useState('')
+    const [foodCarbs, setFoodCarbs] = useState('')
+    const [foodFat, setFoodFat] = useState('')
 
     const submitHandler = (event) => {
         event.preventDefault()
+        const newFood = {
+            id: Math.random(),
+            name: foodName,
+            calories: foodCalories,
+            protein: parseInt(foodProtein),
+            carbs: foodCarbs,
+            fat: foodFat
+        }
+        {props.addNewFood(newFood)}
+        setFoodName('')
+        setFoodCalories('')
+        setFoodProtein('')
+        setFoodCarbs('')
+        setFoodFat('')
     }
 
     const nameChangeHandler = (e) => {
@@ -19,32 +33,32 @@ export default function NewFoodForm(props) {
     }
 
     const calorieChangeHandler = (e) => {
-        setFoodCalories(e.target.value)
+        setFoodCalories(parseFloat(e.target.value))
     }
 
     const proteinChangeHandler = (e) => {
-        setFoodProtein(e.target.value)
+        setFoodProtein(parseFloat(e.target.value))
     }
 
     const carbsChangeHandler = (e) => {
-        setFoodCarbs(e.target.value)
+        setFoodCarbs(parseFloat(e.target.value))
     }
 
     const fatChangeHandler = (e) => {
-        setFoodFat(e.target.value)
+        setFoodFat(parseFloat(e.target.value))
     }
 
     return (
         <div>
             <form onSubmit={submitHandler}>
                 <div className='form-base'>
-                    <InputField placeholder='Name of food' type='text' onChange={nameChangeHandler}/>
-                    <InputField placeholder='Calories' type='number' onChange={calorieChangeHandler}/>
+                    <InputField placeholder='Name of food' type='text' onChange={nameChangeHandler} value={foodName}/>
+                    <InputField placeholder='Calories' type='number' onChange={calorieChangeHandler} value={foodCalories}/>
                 </div>
                 <div className='form-macros'>
-                    <InputField placeholder='Protein Amount (g)' type='number' onChange={proteinChangeHandler}/>
-                    <InputField placeholder='Carbs Amount (g)' type='number' onChange={carbsChangeHandler}/>
-                    <InputField placeholder='Fat Amount (g)' type='number' onChange={fatChangeHandler}/>
+                    <InputField placeholder='Protein Amount (g)' type='number' onChange={proteinChangeHandler} value={foodProtein}/>
+                    <InputField placeholder='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs}/>
+                    <InputField placeholder='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat}/>
                 </div>
                 <button type='submit'>Add Item</button>
             </form>
