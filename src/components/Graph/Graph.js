@@ -1,12 +1,14 @@
 import './Graph.css'
 import  { Doughnut } from 'react-chartjs-2'
 export default function Graph(props) {
+
     const data = {
         labels: ['Protein', 'Carbohydrates', 'Fat'],
         datasets: [
           {
             label: '# of Votes',
-            data: [53.8, 93.1, 12.1],
+            // data: [props.data.protein, props.data.carbs, props.data.fat],
+            data: [props.data.protein/(props.data.protein+props.data.carbs+props.data.fat)*100, props.data.carbs/(props.data.protein+props.data.carbs+props.data.fat)*100, props.data.fat/(props.data.protein+props.data.carbs+props.data.fat)*100],
             backgroundColor: [
               'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
@@ -23,7 +25,9 @@ export default function Graph(props) {
       };
     return (
         <div>
-            <Doughnut data={data} options={{legend: { display: true, position: 'right',}, }}/>
+            <Doughnut data={data}
+          
+            />
         </div>
     )
 }
