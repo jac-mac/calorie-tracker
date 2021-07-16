@@ -13,9 +13,6 @@ export default function NewFoodForm(props) {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        if(!formValidity) {
-            alert('Invalid Form!')
-        }
         const newFood = {
             id: Math.random(),
             name: foodName,
@@ -55,15 +52,27 @@ export default function NewFoodForm(props) {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <div className='form-base'>
-                    <InputField placeholder='Name of food' type='text' onChange={nameChangeHandler} value={foodName} id='name'/>
-                    <InputField placeholder='Calories' type='number' onChange={calorieChangeHandler} value={foodCalories} id='calories'/>
-                </div>
-                <div className='form-macros'>
-                    <InputField placeholder='Protein Amount (g)' type='number' onChange={proteinChangeHandler} value={foodProtein} id='protein'/>
-                    <InputField placeholder='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs} id='carbs'/>
-                    <InputField placeholder='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat} is='fat'/>
-                </div>
+                <section>
+                    <div className='form-base__name'>
+                        <InputField label='Name of food' type='text' onChange={nameChangeHandler} value={foodName} id='name'/>
+                    </div>
+                    <div className='form-base__calories'>
+                        <InputField label='Calorie Amount' type='number' onChange={calorieChangeHandler} value={foodCalories} id='calories'/>
+                    </div>
+                </section>
+                <br/>
+                <section>
+                    <div className='form-macros__protein'>
+                        <InputField label='Protein Amount (g)' type='number' onChange={proteinChangeHandler} value={foodProtein} id='protein'/>
+                    </div>
+                    <div className='form-macros__carbs'>
+                        <InputField label='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs} id='carbs'/>
+                    </div>
+                    <div className='form-macros__fat'>
+                        <InputField label='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat} is='fat'/>
+                    </div>
+                </section>
+                <br/>
                 <button type='submit'>Add Item</button>
             </form>
         </div>

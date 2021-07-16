@@ -1,0 +1,26 @@
+.form-base__name {
+    float: left;
+    margin-right: 20px;
+}
+
+.form-base__calories {
+    float: left;
+}
+
+.form-macros__protein {
+    float: left;
+    margin-right: 20px;
+}
+
+.form-macros__carbs {
+    float: left;
+    margin-right: 20px;
+}
+
+.form-macros__fat {
+    float: left;
+}
+
+br {
+    clear: both;
+}
