@@ -7,7 +7,8 @@ export default function Graph(props) {
         datasets: [
           {
             label: '# of Votes',
-            data: [props.data.protein, props.data.carbs, props.data.fat],
+            // data: [props.data.protein, props.data.carbs, props.data.fat],
+            data: [props.data.protein/(props.data.protein+props.data.carbs+props.data.fat)*100, props.data.carbs/(props.data.protein+props.data.carbs+props.data.fat)*100, props.data.fat/(props.data.protein+props.data.carbs+props.data.fat)*100],
             backgroundColor: [
               'rgba(255, 99, 132, 1)',
               'rgba(54, 162, 235, 1)',
@@ -24,15 +25,8 @@ export default function Graph(props) {
       };
     return (
         <div>
-            <Doughnut data={data} options={
-              {tooltips: {
-                callbacks: {
-                  label: function(tooltipItem, chartData) {
-                    return chartData.labels[tooltipItem.index] + ': ' + chartData.datasets[0].data[tooltipItem.index] + '%'
-                  }
-                }
-              }}
-            }
+            <Doughnut data={data}
+          
             />
         </div>
     )

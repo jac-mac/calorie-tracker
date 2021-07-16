@@ -9,14 +9,18 @@ export default function NewFoodForm(props) {
     const [foodProtein, setFoodProtein] = useState('')
     const [foodCarbs, setFoodCarbs] = useState('')
     const [foodFat, setFoodFat] = useState('')
+    const [formValidity, setFormValidity] = useState(false)
 
     const submitHandler = (event) => {
         event.preventDefault()
+        if(!formValidity) {
+            alert('Invalid Form!')
+        }
         const newFood = {
             id: Math.random(),
             name: foodName,
             calories: foodCalories,
-            protein: parseInt(foodProtein),
+            protein: foodProtein,
             carbs: foodCarbs,
             fat: foodFat
         }
@@ -52,13 +56,13 @@ export default function NewFoodForm(props) {
         <div>
             <form onSubmit={submitHandler}>
                 <div className='form-base'>
-                    <InputField placeholder='Name of food' type='text' onChange={nameChangeHandler} value={foodName}/>
-                    <InputField placeholder='Calories' type='number' onChange={calorieChangeHandler} value={foodCalories}/>
+                    <InputField placeholder='Name of food' type='text' onChange={nameChangeHandler} value={foodName} id='name'/>
+                    <InputField placeholder='Calories' type='number' onChange={calorieChangeHandler} value={foodCalories} id='calories'/>
                 </div>
                 <div className='form-macros'>
-                    <InputField placeholder='Protein Amount (g)' type='number' onChange={proteinChangeHandler} value={foodProtein}/>
-                    <InputField placeholder='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs}/>
-                    <InputField placeholder='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat}/>
+                    <InputField placeholder='Protein Amount (g)' type='number' onChange={proteinChangeHandler} value={foodProtein} id='protein'/>
+                    <InputField placeholder='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs} id='carbs'/>
+                    <InputField placeholder='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat} is='fat'/>
                 </div>
                 <button type='submit'>Add Item</button>
             </form>
