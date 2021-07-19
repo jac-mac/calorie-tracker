@@ -15,6 +15,7 @@
 .food-item:hover {
   box-shadow: 0 6px 12px 0 rgba(0,0,0,0.5);
   transform: scale(1.02);
+  cursor: pointer;
 }
 .food-item__base {
   display: inline-block;

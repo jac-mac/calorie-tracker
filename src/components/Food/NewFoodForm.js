@@ -50,7 +50,7 @@ export default function NewFoodForm(props) {
     }
 
     return (
-        <div>
+        <div className='formCard'>
             <form onSubmit={submitHandler}>
                 <section>
                     <div className='form-base__name'>

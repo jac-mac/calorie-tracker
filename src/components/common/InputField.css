@@ -1,3 +1,9 @@
 input, label {
     display: block;
+    font-weight: bold;
+    color: #ec7070;
+}
+
+label {
+    font-weight: bold;
 }
