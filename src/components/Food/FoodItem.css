@@ -9,10 +9,12 @@
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  transition: ease 0.3s;
 }
 
 .food-item:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.5);
+  transform: scale(1.02);
 }
 .food-item__base {
   display: inline-block;
