@@ -9,6 +9,11 @@
   justify-content: center;
 }
 
+.middle-content {
+  width: 900px;
+}
+
+
 .food-form {
   width: 100%;
 }
