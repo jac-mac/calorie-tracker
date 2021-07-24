@@ -1,3 +1,15 @@
+.form-card {
+    background-color: rgba(64, 64, 63, 1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .form-base__name {
     float: left;
     margin-right: 20px;
@@ -23,4 +35,26 @@
 
 br {
     clear: both;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(64, 64, 63, 1);
+    margin-top: 20px;
+}
+
+button {
+    font-weight: bold;
+    font-size: 14pt;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    background-image: linear-gradient(90deg, rgba(236,112,112,1) 29%, rgba(222,66,66,1) 77%, rgba(255,51,51,1) 94%);
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.02)
 }

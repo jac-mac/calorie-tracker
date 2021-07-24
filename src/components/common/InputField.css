@@ -1,9 +1,23 @@
 input, label {
     display: block;
     font-weight: bold;
-    color: #ec7070;
 }
 
 label {
     font-weight: bold;
+    color: #ec7070;
+}
+
+input {
+    background-color: #e3e1e6;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 14pt;
+    color: black;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

@@ -20,7 +20,6 @@ export default function FoodItem(props) {
                     {props.fat}g
                 </div>
             </div>
-
         </div>
     )
 }

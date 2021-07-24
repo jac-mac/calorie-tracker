@@ -3,6 +3,7 @@ import FoodsList from './components/Food/FoodsList'
 import AppBar from './components/AppBar/AppBar'
 import Graph from './components/Graph/Graph'
 import NewFoodForm from './components/Food/NewFoodForm'
+import AddButton from './components/AddButton'
 import { useState } from 'react'
 
 const DUMMY_DATA = [{
@@ -40,6 +41,19 @@ function App() {
   const [totalProtein, setTotalProtein] = useState(0)
   const [totalCarbs, setTotalCarbs] = useState(0)
   const [totalFat, setTotalFat] = useState(0)
+  const [showForm, setShowForm] = useState(true)
+
+  const scrollAndShowForm = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+    setShowForm(true)
+  }
+
+  const closeForm = () => {
+    setShowForm(false)
+  }
 
   const addFoodItem = (food) => {
     setFoods((prevFoods) => {
@@ -72,17 +86,36 @@ function App() {
     fat: totalFat
   }
   
+  if(showForm) {
+    return (
+      <div className='App'>
+          <AppBar data={macro_data}/>
+          <div className='ur-mom'>
+            <div className='middle-content'>
+                <NewFoodForm addNewFood={addFoodItem} closeOnClick={closeForm}/>
+                <FoodsList food={foods} />
+                {/* <Graph data={macro_data} /> */}
+            </div>
+          </div>
+          <AddButton onClick={scrollAndShowForm}/>
+      </div>
+    );
+  }
 
-  return (
-    <div className="App">
-        <AppBar data={macro_data}/>
-        <NewFoodForm addNewFood={addFoodItem}/>
-        <div className='content'>
-          <FoodsList food={foods} />
-          <Graph data={macro_data}/>
-        </div>
-    </div>
-  );
+  else {
+    return (
+      <div className='App'>
+          <AppBar data={macro_data}/>
+          <div className='ur-mom'>
+            <div className='middle-content'>
+                <FoodsList food={foods} />
+                {/* <Graph data={macro_data} /> */}
+            </div>
+          </div>
+          <AddButton onClick={scrollAndShowForm}/>
+      </div>
+    );
+  }
 }
 
 export default App;

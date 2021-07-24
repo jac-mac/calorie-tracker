@@ -13,20 +13,27 @@ export default function NewFoodForm(props) {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        const newFood = {
-            id: Math.random(),
-            name: foodName,
-            calories: foodCalories,
-            protein: foodProtein,
-            carbs: foodCarbs,
-            fat: foodFat
+
+        if(foodName === '' || foodCalories === '' || foodProtein === '' || foodCarbs === '' || foodFat === '') {
+            setFormValidity(false)
         }
-        {props.addNewFood(newFood)}
-        setFoodName('')
-        setFoodCalories('')
-        setFoodProtein('')
-        setFoodCarbs('')
-        setFoodFat('')
+        if(!formValidity) {
+
+        }
+            const newFood = {
+                id: Math.random(),
+                name: foodName,
+                calories: foodCalories,
+                protein: foodProtein,
+                carbs: foodCarbs,
+                fat: foodFat
+            }
+            {props.addNewFood(newFood)}
+            setFoodName('')
+            setFoodCalories('')
+            setFoodProtein('')
+            setFoodCarbs('')
+            setFoodFat('')
     }
 
     const nameChangeHandler = (e) => {
@@ -50,11 +57,11 @@ export default function NewFoodForm(props) {
     }
 
     return (
-        <div className='formCard'>
+        <div className='form-card'>
             <form onSubmit={submitHandler}>
                 <section>
                     <div className='form-base__name'>
-                        <InputField label='Name of food' type='text' onChange={nameChangeHandler} value={foodName} id='name'/>
+                        <InputField label='Name of Food' type='text' onChange={nameChangeHandler} value={foodName} id='name'/>
                     </div>
                     <div className='form-base__calories'>
                         <InputField label='Calorie Amount' type='number' onChange={calorieChangeHandler} value={foodCalories} id='calories'/>
@@ -73,7 +80,13 @@ export default function NewFoodForm(props) {
                     </div>
                 </section>
                 <br/>
-                <button type='submit'>Add Item</button>
+                <section>
+                    <div className='button'>
+                        <button type='submit'>Add Item</button>
+                        <button type='reset' onClick={props.closeOnClick}>Close</button>
+                    </div>
+
+                </section>
             </form>
         </div>
     )

@@ -1,8 +1,9 @@
 .food-item {
-  width: 100%;
+  width: 900px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 6px;
   margin-bottom: 12px;
   background-color: rgba(64, 64, 63, 1);
   color: #ec7070;
