@@ -1,4 +1,14 @@
 canvas {
-    height: 225px !important;
-    width: 225px !important;
+    height: 250px !important;
+    width: 250px !important;
+}
+
+.graph {
+    position: fixed;
+    top: 50;
+    left: 0;
+    padding: 0 10px 10px 0;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    
 }

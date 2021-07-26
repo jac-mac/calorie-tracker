@@ -76,14 +76,14 @@ export default function NewFoodForm(props) {
                         <InputField label='Carbs Amount (g)' type='number' onChange={carbsChangeHandler} value={foodCarbs} id='carbs'/>
                     </div>
                     <div className='form-macros__fat'>
-                        <InputField label='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat} is='fat'/>
+                        <InputField label='Fat Amount (g)' type='number' onChange={fatChangeHandler} value={foodFat} id='fat'/>
                     </div>
                 </section>
                 <br/>
                 <section>
                     <div className='button'>
-                        <button type='submit'>Add Item</button>
-                        <button type='reset' onClick={props.closeOnClick}>Close</button>
+                        <button type='reset'  id='closeFormButton' onClick={props.closeOnClick}>Close</button>
+                        <button type='submit' id='addFoodButton'>Add Item</button>
                     </div>
 
                 </section>

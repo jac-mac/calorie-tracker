@@ -90,6 +90,7 @@ function App() {
     return (
       <div className='App'>
           <AppBar data={macro_data}/>
+          <Graph data={macro_data} />
           <div className='ur-mom'>
             <div className='middle-content'>
                 <NewFoodForm addNewFood={addFoodItem} closeOnClick={closeForm}/>
@@ -106,10 +107,10 @@ function App() {
     return (
       <div className='App'>
           <AppBar data={macro_data}/>
+          <Graph data={macro_data} />
           <div className='ur-mom'>
             <div className='middle-content'>
                 <FoodsList food={foods} />
-                {/* <Graph data={macro_data} /> */}
             </div>
           </div>
           <AddButton onClick={scrollAndShowForm}/>

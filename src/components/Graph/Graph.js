@@ -24,7 +24,7 @@ export default function Graph(props) {
         ],
       };
     return (
-        <div>
+        <div className='graph'>
             <Doughnut data={data}
           
             />
