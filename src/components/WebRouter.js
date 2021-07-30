@@ -1,4 +1,5 @@
 import Foods from './FoodItemPage/Foods'
+import Login from './LoginPage/Login'
 import {BrowserRouter as Router, Switch, Link, Route} from 'react-router-dom'
 
 export default function WebRouter() {
@@ -24,7 +25,7 @@ export default function WebRouter() {
                         <Foods />
                     </Route>
                     <Route path='/login'>
-                        Login
+                        <Login />
                     </Route>
                     <Route path='/'>
                         Home
