@@ -1,9 +1,9 @@
-import './App.css';
-import FoodsList from './components/Food/FoodsList'
-import AppBar from './components/AppBar/AppBar'
-import Graph from './components/Graph/Graph'
-import NewFoodForm from './components/Food/NewFoodForm'
-import AddButton from './components/AddButton'
+import './Foods.css';
+import FoodsList from './Food/FoodsList'
+import AppBar from './AppBar/AppBar'
+import Graph from './Graph/Graph'
+import NewFoodForm from './Food/NewFoodForm'
+import AddButton from './AddButton'
 import { useState } from 'react'
 
 const DUMMY_DATA = [{
@@ -32,7 +32,7 @@ const DUMMY_DATA = [{
 }
 ]
 
-DUMMY_DATA.forEach((element) => {console.log(element.name)})
+// DUMMY_DATA.forEach((element) => {console.log(element.name)})
 
 function App() {
 
@@ -48,6 +48,10 @@ function App() {
       top: 0,
       behavior: 'smooth'
     })
+    if(showForm) {
+      setShowForm(false)
+      return
+    }
     setShowForm(true)
   }
 

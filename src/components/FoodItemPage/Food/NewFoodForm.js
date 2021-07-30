@@ -1,5 +1,5 @@
 import './NewFoodForm.css'
-import InputField from '../common/InputField'
+import InputField from '../../common/InputField'
 import { useState } from 'react'
 
 export default function NewFoodForm(props) {

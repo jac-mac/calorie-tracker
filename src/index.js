@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import WebRouter from './components/WebRouter';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WebRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );
